@@ -1,0 +1,67 @@
+/* Styling the background */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white; /* White background for the page */
+    text-align: center; /* Centers content */
+    margin: 0;
+    padding: 0;
+}
+
+/* Create a box (container) */
+.container {
+    background-color: pink; /* Pink background inside the box */
+    width: 50%; /* Set box width */
+    margin: 50px auto; /* Center the box */
+    padding: 20px; /* Adds space inside the box */
+    border: 5px solid red; /* Red border */
+    border-radius: 15px; /* Rounds the edges */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2); /* Adds shadow */
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 2s forwards; /* Fade-in effect */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Styling the heading */
+h1 {
+    color: red;
+    font-size: 40px;
+}
+
+/* Styling the paragraph */
+p {
+    font-size: 20px;
+    color: darkred; /* Dark red text */
+}
+
+/* Styling the image */
+img {
+    width: 300px; /* Sets image size */
+    border-radius: 10px; /* Rounds the edges */
+    border: 5px solid red; /* Adds a red border */
+    box-shadow: 5px 5px 10px rgba(255, 0, 0, 0.3); /* Red shadow */
+}
+
+/* Styling the button */
+button {
+    background-color: red;
+    color: white;
+    font-size: 18px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: darkred;
+}
+
+/* Floating hearts container */
+#hearts-container {
+    position

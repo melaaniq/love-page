@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Declarație de Dragoste</title>
+    <style>
+        /* Make the whole page white */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents scrollbars from floating hearts */
+        }
+
+        /* Create a box (container) */
+        .container {
+            background-color: pink;
+            width: 50%;
+            max-width: 400px;
+            margin: 20px auto; /* Moved higher */
+            padding: 20px;
+            border: 5px solid red;
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Glowing text effect */
+        h1 {
+            color: red;
+            font-size: 40px;
+            text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8);
+            animation: glow 1.5s infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0px 0px 10px rgba(255, 0, 0, 0.8); }
+            to { text-shadow: 0px 0px 20px rgba(255, 0, 0, 1); }
+        }
+
+        /* Styling the paragraph */
+        p {
+            font-size: 20px;
+            color: darkred;
+        }
+
+        /* Styling the image */
+        img {
+            width: 300px;
+            border-radius: 10px;
+            border: 5px solid red;
+        }
+
+        /* Play Music Button */
+        .play-btn {
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .play-btn:hover {
+            background-color: darkred;
+        }
+
+        /* Floating hearts animation */
+        .heart {
+            position: absolute;
+            color: red;
+            font-size: 30px;
+            opacity: 0.7;
+            animation: floatUp 5s linear infinite;
+        }
+
+        @keyframes floatUp {
+            from { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            to { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+
+        /* Responsive Design for Small Screens */
+        @media (max-width: 600px) {
+            .container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating Hearts Container -->
+    <div id="hearts-container"></div>
+
+    <!-- Everything inside this container will be in the pink box -->
+    <div class="container">
+        <h1>Hei Bubico,</h1>
+        <p>Te iubesc de nu mai pot!</p>
+        <img src="image.jpg" alt="noi">
+        <p>Vreau să fii iubirica mea pe vecie.</p>
+
+        <!-- Play Music Button for YouTube -->
+        <button class="play-btn" onclick="loadYouTube()">🎵 Play Music</button>
+        
+        <!-- YouTube Video Container (Hidden Until Clicked) -->
+        <div id="youtube-container" style="display: none; margin-top: 15px;"></div>
+    </div>
+
+    <!-- JavaScript for Floating Hearts and YouTube Button -->
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = Math.random() * 3 + 3 + "s";
+            document.getElementById("hearts-container").appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+
+        setInterval(createHeart, 500);
+
+        // Load YouTube in the page when button is clicked
+        function loadYouTube() {
+            document.getElementById("youtube-container").innerHTML = `
+                <iframe width="560" height="315" 
+                    src="https://www.youtube.com/embed/Z-GK0l0kL7E?autoplay=1&loop=1&playlist=Z-GK0l0kL7E" 
+                    frameborder="0" 
+                    allow="autoplay; encrypted-media" 
+                    allowfullscreen>
+                </iframe>`;
+            document.getElementById("youtube-container").style.display = "block";
+        }
+    </script>
+
+</body>
+</html>
